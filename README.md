@@ -1,20 +1,24 @@
-![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F17%2FGoogle-flutter-logo.png&f=1&nofb=1" height="90">
+
+# Weather App ([Flutter: Part 8 Powering Your App with Live Web Data](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart))
+# <a href="https://www.linkedin.com/learning/flutter-part-08-powering-your-app-with-live-web-data"><img src="https://www1.villanova.edu/content/villanova/provost/careers/plan/tips/linkedinlearning/_jcr_content/pagecontent/image.img.png/1596742874705." height="70"/></a>
+
+This app is created as part of the [London App Brewery: Complete Flutter Development Bootcamp](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart), I have attended on [LinkedInLearning](https://www.linkedin.com/learning/flutter-part-08-powering-your-app-with-live-web-data).
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/devasworski/Flutter-Weather?branch=master)](https://bettercodehub.com/)
+
+## The Goal
+
+The objective of this tutorial is to learn about asynchronous programming in Dart. We looked at how to carry out time consuming tasks such as receiving the device location or receiving data from an API. 
 
 
-# Clima ☁
+## The Task
 
-## Our Goal
-
-The objective of this tutorial is to learn about asynchronous programming in Dart. We'll look at how to carry out time consuming tasks such as getting device location and networking to get data from the internet. 
-
-
-## What you will create
-
-We’re going to make a weather app inspired by the beautiful designs made by [Olia Gozha](https://dribbble.com/shots/4663154-). By the end of the module, you'll be able to find out the live weather data in the current location of the device as well as the weather for any city you can think of!
+A weather app inspired by the designs made by [Olia Gozha](https://dribbble.com/shots/4663154-). The App is capable of showing live weather data, based on the current device location. Furthermore, the weather for any other city can be displayed!
 
 ![Finished App](https://github.com/londonappbrewery/Images/blob/master/clima-demo.gif)
 
-## What you will learn
+## Learning outcomes
 
 - How to use Dart to perform asynchronous tasks.
 - Understand async and await.
@@ -27,8 +31,3 @@ We’re going to make a weather app inspired by the beautiful designs made by [O
 - Learn about the lifecycle of Stateful Widgets and how to override them.
 - How to use the Geolocator package to get live location data for both iOS and Android.
 - How to use the TextField Widget to take user input.
-
-
->This is a companion project to The App Brewery's Complete Flutter Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
