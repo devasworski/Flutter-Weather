@@ -22,12 +22,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     APIHelper api = APIHelper(
         "https://samples.openweathermap.org/data/2.5/weather?lat=${loc.getLat()}&lon=${loc.getLong()}&appid=${OPENWEATHERMAP_API_KEY}");
     WeatherJson = await api.getData();
-    var city = WeatherJson['name'];
-    var temp = WeatherJson['main']['temp'];
-    var description = WeatherJson['weather'][0]['description'];
 
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LocationScreen()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => LocationScreen(WeatherJson)));
   }
 
   @override

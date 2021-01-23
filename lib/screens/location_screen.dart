@@ -4,9 +4,28 @@ import 'package:clima/utilities/constants.dart';
 class LocationScreen extends StatefulWidget {
   @override
   _LocationScreenState createState() => _LocationScreenState();
+
+  LocationScreen(this.LocationWeather);
+  final LocationWeather;
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+  var city;
+  double temp;
+  var description;
+
+  @override
+  void initState() {
+    updateUI(widget.LocationWeather);
+    super.initState();
+  }
+
+  void updateUI(dynamic WeatherJson) {
+    city = WeatherJson['name'];
+    temp = WeatherJson['main']['temp'] - 275.15;
+    description = WeatherJson['weather'][0]['description'];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +68,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      '32°',
+                      "${temp.toStringAsFixed(1)}°C",
                       style: kTempTextStyle,
                     ),
                     Text(
