@@ -16,7 +16,7 @@ The objective of this tutorial is to learn about asynchronous programming in Dar
 
 A weather app inspired by the designs made by [Olia Gozha](https://dribbble.com/shots/4663154-). The App is capable of showing live weather data, based on the current device location. Furthermore, the weather for any other city can be displayed!
 
-![Finished App](https://github.com/londonappbrewery/Images/blob/master/clima-demo.gif)
+![Finished App](https://dev-sworski.com/wp-content/uploads/2021/01/ezgif.com-resize.gif)
 
 ## Learning outcomes
 
