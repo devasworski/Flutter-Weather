@@ -12,9 +12,10 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   WeatherModel model = WeatherModel();
-  var city;
-  double temp;
-  var condition;
+  var city = "";
+  double temp = 0;
+  var condition = 805;
+  String message = "Data could not be fetched";
 
   @override
   void initState() {
@@ -23,9 +24,13 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void updateUI(dynamic WeatherJson) {
+    if (WeatherJson == null) {
+      return;
+    }
     city = WeatherJson['name'];
     temp = WeatherJson['main']['temp'] - 275.15;
     condition = WeatherJson['weather'][0]['id'];
+    message = "${model.getMessage(temp.toInt())}! \n\n $city";
   }
 
   @override
@@ -50,7 +55,11 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var weatherData = await model.getLocationWeather();
+                      updateUI(weatherData);
+                      print("updated weather");
+                    },
                     child: Icon(
                       Icons.near_me,
                       size: 50.0,
@@ -83,7 +92,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(right: 15.0),
                 child: Text(
-                  "${model.getMessage(temp.toInt())}! \n\n $city",
+                  message,
                   textAlign: TextAlign.right,
                   style: kMessageTextStyle,
                 ),
