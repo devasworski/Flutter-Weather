@@ -11,7 +11,7 @@ class APIHelper {
       return jsonDecode(response.body);
     } else {
       print(response.statusCode);
-      return null;
+      throw (response.statusCode);
     }
   }
 }

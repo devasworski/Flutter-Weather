@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:clima/services/location.dart';
 import 'package:clima/services/networking.dart';
 import '../services/networking.dart';
-import 'package:clima/services/config.dart'; // API FIlE in .gitignore
+import 'package:clima/services/config.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'location_screen.dart'; // API FIlE in .gitignore
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -22,6 +25,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     var city = WeatherJson['name'];
     var temp = WeatherJson['main']['temp'];
     var description = WeatherJson['weather'][0]['description'];
+
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => LocationScreen()));
   }
 
   @override
@@ -33,7 +39,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text(loc.toString())),
+      body: Center(
+        child: SpinKitDoubleBounce(
+          size: 70,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
