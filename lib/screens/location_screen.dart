@@ -27,13 +27,15 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void updateUI(dynamic WeatherJson) {
-    if (WeatherJson == null) {
-      return;
-    }
-    city = WeatherJson['name'];
-    temp = WeatherJson['main']['temp'] - 275.15;
-    condition = WeatherJson['weather'][0]['id'];
-    message = "${model.getMessage(temp.toInt())}! \n\n $city";
+    setState(() {
+      if (WeatherJson == null) {
+        return;
+      }
+      city = WeatherJson['name'];
+      temp = WeatherJson['main']['temp'] - 275.15;
+      condition = WeatherJson['weather'][0]['id'];
+      message = "${model.getMessage(temp.toInt())}! \n\n $city";
+    });
   }
 
   @override
@@ -68,11 +70,14 @@ class _LocationScreenState extends State<LocationScreen> {
                       ),
                     ),
                     FlatButton(
-                      onPressed: () {
-                        Navigator.push(
+                      onPressed: () async {
+                        String typed_name = await Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CityScreen()));
+                        if (typed_name != "" || typed_name != null) {
+                          updateUI(await model.getCityWeather(typed_name));
+                        }
                       },
                       child: Icon(
                         Icons.location_city,

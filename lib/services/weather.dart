@@ -15,6 +15,24 @@ class WeatherModel {
     return await api.getData();
   }
 
+  Future<dynamic> getCityWeather(String city_name) async {
+    APIHelper api = APIHelper(
+        "https://samples.openweathermap.org/data/2.5/weather?q=${urify(city_name)}&appid=${OPENWEATHERMAP_API_KEY}");
+    print(api.url);
+    return await api.getData();
+  }
+
+  /**
+   * Makes sure that the String can be used in a URL.
+   * Methode is incomplete
+   * TODO: Add other conditions
+   */
+  String urify(String text) {
+    String RESULT = "";
+    RESULT = text.replaceAll(' ', '%20');
+    return RESULT;
+  }
+
   String getWeatherIcon(int condition) {
     if (condition < 300) {
       return '🌩';
