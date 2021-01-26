@@ -1,6 +1,6 @@
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F17%2FGoogle-flutter-logo.png&f=1&nofb=1" height="90">
 
-# Weather App ([Flutter: Part 8 Powering Your App with Live Web Data](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart))
+# Weather App ([Flutter: Part 8 Powering Your App with Live Web Data](https://www.linkedin.com/learning/flutter-part-08-powering-your-app-with-live-web-data))
 # <a href="https://www.linkedin.com/learning/flutter-part-08-powering-your-app-with-live-web-data"><img src="https://www1.villanova.edu/content/villanova/provost/careers/plan/tips/linkedinlearning/_jcr_content/pagecontent/image.img.png/1596742874705." height="70"/></a>
 
 This app is created as part of the [London App Brewery: Complete Flutter Development Bootcamp](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart), I have attended on [LinkedInLearning](https://www.linkedin.com/learning/flutter-part-08-powering-your-app-with-live-web-data).
